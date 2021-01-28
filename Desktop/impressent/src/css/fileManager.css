@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@font-face {
+  font-family: Gotham;
+  src: url(../fonts/GOTHAMMEDIUM.TTF);
+}
+.file_layout {
+  background-color: #202521;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+.top_content_file {
+  background-color: #3f6845;
+  color: white;
+  /* padding-top: 1.8rem; */
+  /* padding-bottom: 1.8rem; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  height: 4rem;
+}
+
+.impressent_top_file {
+  text-transform: uppercase;
+  font-family: Gotham;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 80%;
+  letter-spacing: 0.17em;
+  padding-top: 0.4rem;
+
+  /* margin-top: 2.315rem; */
+  /* padding-top: 1.6rem;
+  padding-bottom: 1.6rem; */
+  /* margin-top: 1.6rem;
+  margin-bottom: 1.2rem; */
+}
+.link_back {
+  all: unset;
+  color: white;
+  padding-top: 0.4rem;
+  /* margin-bottom: 0.2rem; */
+  /* margin: 0; */
+  /* margin-top: 1.6rem; */
+  /* padding-bottom: 0.5rem; */
+  /* padding-top: 1.6rem; */
+}
+.link_back:hover,
+.link_back:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+.back_key {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  padding-right: 1.5rem;
+}
+.fall_back {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 80%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  justify-content: center;
+  align-items: center;
+}
+.fall_back h3 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 80%;
+  margin-left: 2rem;
+  margin-bottom: 5rem;
+}
+.fall_back h4 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 80%;
+  margin-bottom: 5rem;
+  color: white;
+}
+.fall_back .add_more {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+.vectorselect {
+  height: 25px;
+  width: 25px;
+}
+.select_img {
+  display: flex;
+  flex-direction: column;
+  all: unset;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15.5294px;
+  line-height: 80%;
+  width: 70px;
+  text-align: center;
+  margin-top: 2.5rem;
+  /* height: 100%; */
+}
+.add_p {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+.select_img:active,
+.select_img:focus {
+  /* border: 0; */
+  outline: none;
+}
+.footer_div {
+  display: flex;
+  height: 140px;
+  justify-content: center;
+  align-items: flex-end;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+}
+.footer_file {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 80%;
+  color: #9aa087;
+  padding-bottom: 0.7rem;
+}
+.redirect_title {
+  all: unset;
+}
+.redirect_title:hover {
+  all: unset;
+  cursor: pointer;
+}
+/* medai queries */

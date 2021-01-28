@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+.slide_show {
+  width: 220px;
+  height: 200.59px;
+}
+.lazy {
+  width: 200px;
+  height: 145px;
+}
+.indicators {
+  display: none;
+}
+.react-slideshow-container + ul.indicators {
+  display: none;
+}
+.slide-container {
+  position: relative;
+  width: 447.92px;
+}
+.back_button {
+  all: unset;
+  position: absolute;
+  left: 0%;
+  top: 40%;
+}
+.next_button {
+  all: unset;
+  position: absolute;
+  right: 0%;
+  top: 40%;
+}
+.back_button:focus,
+.next_button:focus {
+  outline: none;
+}
+.arrow_mob {
+  display: none;
+}
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .slide_show {
+    width: 260px;
+    height: 260px;
+  }
+  .lazy {
+    width: 260px;
+    height: 260px;
+  }
+  .react-slideshow-wrapper .images-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 480px;
+  }
+  .arrow_web {
+    display: none;
+  }
+  .arrow_mob {
+    display: unset;
+  }
+  .slide-container {
+    width: 350px;
+  }
+}
+@media screen and (max-height: 667px) and (orientation: portrait) {
+  .lazy {
+    width: 120px;
+    height: 125px;
+  }
+}

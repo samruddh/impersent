@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+.video_page {
+  color: white;
+}
+.video_center {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 80%;
+  color: white;
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  /* height: 125px; */
+  /* justify-content: center; */
+  align-items: center;
+  justify-content: center;
+}
+
+.video_div {
+  /* align-self: center; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* display: flex; */
+  /* flex-direction: column;
+  justify-content: center; */
+  position: relative;
+}
+.video_lower {
+  position: absolute;
+  bottom: 20px;
+}
+.video_webcam {
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 0.35rem;
+}
+.footer_record_div {
+  /* display: flex; */
+  margin-top: 0.5rem;
+}
+
+.footer_record {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 80%;
+  color: #9aa087;
+  /* padding-bottom: 0.7rem; */
+}
+.slides_div {
+  width: 447.92px;
+  align-self: center;
+  padding-top: 0.5rem;
+}
+.video_button_div {
+  display: unset;
+}
+.record_btn {
+  all: unset;
+  margin-top: 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 80%;
+  height: 45px;
+  width: 190px;
+  background: #fe1f1f;
+  border-radius: 26.5px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  margin-bottom: 0.75rem;
+}
+.record_btn:active,
+.record_btn:focus {
+  /* border: 0; */
+  outline: none;
+}
+.btn_div {
+  text-align: center;
+  align-self: center;
+  text-transform: uppercase;
+}
+.record_btn:hover {
+  color: white;
+  text-decoration: none;
+}
+.resumeProcced {
+  /* display: flex; */
+  /* all: unset; */
+  display: inline-flex;
+}
+.error_msg {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  height: 135px;
+  width: 500px;
+  /* line-height: 1rem; */
+  font-size: 1.3rem;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  padding-top: 1.5rem;
+}
+.video_page_mobile {
+  display: none;
+}
+.res_procced {
+  height: 45px;
+  width: 95.5px;
+}
+.proceed_margin {
+  margin-left: 10px;
+  color: white;
+}
+.proceed_bg {
+  background: #fe671f;
+  color: white;
+}
+.slide_procced {
+  /* display: none; */
+}
+.margin_footer {
+  margin-top: 4rem;
+}
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .slides_div {
+    width: 343px;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+  }
+  .video_webcam {
+    /* height: 23%; */
+    /* width: 25%; */
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 0.45rem;
+  }
+
+  .record_btn {
+    width: 213px;
+    height: 53px;
+  }
+  .res_procced {
+    width: 131px;
+    height: 53px;
+  }
+  .video_button_div {
+    margin-bottom: 1.5rem;
+  }
+  .video_lower {
+    position: absolute;
+    bottom: 25px;
+  }
+  .footer_record_div {
+    /* display: flex; */
+    margin-top: 2rem;
+  }
+  .error_msg {
+    height: 135px;
+    width: 350px;
+  }
+  .back_key {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    padding-right: 1.5rem;
+    /* margin-top: 0rem; */
+    padding-top: 0;
+  }
+}
+@media screen and (max-height: 667px) and (orientation: portrait) {
+  .video_webcam {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 0.35rem;
+  }
+  .record_btn {
+    width: 130px;
+    height: 33px;
+  }
+  .res_procced {
+    width: 80px;
+    height: 33px;
+  }
+}

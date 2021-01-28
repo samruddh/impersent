@@ -1,0 +1,151 @@
+import React, { useEffect, useState } from 'react';
+import Webcam from 'react-webcam';
+// import ImageUploader from 'react-images-upload';
+// import ImageUploading from 'react-images-uploading';
+// import { render } from 'react-dom';
+// import VideoRecorder from 'react-video-recorder';
+import DataApi from '../utils/DataApi';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+// import Slideshow from './SlideShow';
+ 
+function RecordVideo() {
+  const webcamRef = React.useRef(null);
+  const mediaRecorderRef = React.useRef(null);
+  const [capturing, setCapturing] = React.useState(false);
+  // const [recordedChunks, setRecordedChunks] = React.useState([]);
+  const { recordedChunks, images, setRecordedChunks, setImages } = React.useContext(DataApi);
+  // const [videoChunk, setVideoChunk] = useState([]);
+  const [success, setSuccess] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
+  const handleStartCaptureClick = React.useCallback(() => {
+    setCapturing(true);
+    mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
+      mimeType: 'video/webm',
+    });
+    mediaRecorderRef.current.addEventListener('dataavailable', handleDataAvailable);
+
+    mediaRecorderRef.current.start();
+  }, [webcamRef, setCapturing, mediaRecorderRef]);
+
+  const handleDataAvailable = React.useCallback(
+    ({ data }) => {
+      if (data.size > 0) {
+        setRecordedChunks((prev) => prev.concat(data));
+        console.log('handle', recordedChunks);
+      }
+    },
+    [setRecordedChunks],
+  );
+
+  const handleStopCaptureClick = React.useCallback(() => {
+    mediaRecorderRef.current.stop();
+    console.log('Stop', recordedChunks);
+    setCapturing(false);
+    setRecordedChunks(recordedChunks);
+    console.log('record', recordedChunks);
+  }, [mediaRecorderRef, webcamRef, setCapturing]);
+
+  const handleDownload = React.useCallback(() => {
+    // if (videoChunk.length) {
+    //   const blob = new Blob(videoChunk, {
+    //     type: 'video/webm',
+    //   });
+    //   const url = URL.createObjectURL(blob);
+    //   const a = document.createElement('a');
+    //   document.body.appendChild(a);
+    //   a.style = 'display: none';
+    //   a.href = url;
+    //   a.download = 'react-webcam-stream-capture.webm';
+    //   a.click();
+    //   window.URL.revokeObjectURL(url);
+    //   setRecordedChunks([]);
+    //   console.log('while dowload', videoChunk);
+    // }
+  }, [recordedChunks]);
+  const videoConstraints = {
+    facingMode: { exact: 'environment' },
+  };
+  // const success = () => {
+  //   console.log('success');
+  // };
+  // const error = () => {
+  //   console.log('error');
+  // };
+
+  const style = {
+    height: '300px',
+  };
+
+  useEffect(() => {
+    // navigator.mediaDevices
+    //   .getUserMedia({ audio: true, video: true })
+    //   .then((stream) => {
+    //     console.log('success', stream);
+    //     // To stop accesing the web camera and mic
+    //     stream.getTracks().forEach(function (track) {
+    //       track.stop();
+    //     });
+    //     setSuccess(true);
+    //   })
+    //   .catch((err) => {
+    //     console.log('Camera or mic not available', err.name);
+    //     setErrorMessage(err.name);
+    //     setSuccess(false);
+    //   });
+
+    return () => {};
+  }, []);
+  const clickHandler = () => {
+    console.log('Data', recordedChunks);
+  };
+  return (
+    <div>
+      <h1>Video Page</h1>
+      {!success ? (
+        errorMessage ? (
+          errorMessage === 'NotAllowedError' ? (
+            <h2>Please enable camera and mic access</h2>
+          ) : (
+            `some error ${errorMessage}`
+          )
+        ) : null
+      ) : null}
+
+      {/* <div className='image-grid'>
+        {images.map((image, index) => (
+          <div key={index} className='image-item'>
+            <img src={image['data_url']} alt='' width='150' />
+          </div>
+        ))}
+      </div> */}
+
+      {/* <Slideshow style={style} /> */}
+      <button onClick={clickHandler}>Show chunk</button>
+      <Webcam
+        audio={true}
+        ref={webcamRef}
+        height={350}
+        width={250}
+        videoConstraints={{ facingMode: 'right' }}
+        className='justify-self-end'
+      />
+      {success ? (
+        <div>
+          {capturing ? (
+            <button onClick={handleStopCaptureClick}>Stop Capture</button>
+          ) : (
+            <button onClick={handleStartCaptureClick}>Start Capture</button>
+          )}
+          {recordedChunks.length > 0 && <button onClick={handleDownload}>Download</button>}
+        </div>
+      ) : null}
+      <Link to='/review'>Procced</Link>
+    </div>
+  );
+}
+
+export default RecordVideo;
+
+// npm install react-webcam
+

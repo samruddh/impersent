@@ -1,0 +1,165 @@
+// import React, { useState } from 'react';
+// import Webcam from 'react-webcam';
+// import ImageUploader from 'react-images-upload';
+// import ImageUploading from 'react-images-uploading';
+// import { render } from 'react-dom';
+// import VideoRecorder from 'react-video-recorder';
+// import DataApi from '../utils/DataApi';
+// import QierPlayer from 'qier-player';
+
+// function Review() {
+//   const webcamRef = React.useRef(null);
+//   const mediaRecorderRef = React.useRef(null);
+//   const [capturing, setCapturing] = React.useState(false);
+//   // const [recordedChunks, setRecordedChunks] = React.useState([]);
+//   const { recordedChunks, images, setRecordedChunks, setImages } = React.useContext(DataApi);
+//   const [videoCap, setVideo] = useState(null);
+//   // const playVideo = () => {
+//   //   var blob = null;
+//   //   if (recordedChunks.length) {
+//   //     blob = new Blob(recordedChunks, {
+//   //       type: 'video/webm',
+//   //     });
+//   //   }
+//   //   setVideo(blob);
+//   //   console.log('blob', blob);
+//   // };
+//   const playVideo = (videoStream) => {
+//     // as blob
+//     // var blob = null;
+//     // if (recordedChunks.length) {
+//     //   blob = new Blob(recordedChunks, {
+//     //     type: 'video/webm',
+//     //   });
+//     // }
+//     var video = document.querySelector('video');
+
+//     var videoUrl = window.URL.createObjectURL(videoStream.data); // blob.data gives actual data
+
+//     video.src = videoUrl;
+//   };
+
+//   return (
+//     <div>
+//       Review
+//       {/* <Webcam
+//         audio={true}
+//         ref={webcamRef}
+//         height={950}
+//         width={950}
+//         videoConstraints={{ facingMode: 'right' }}
+//       /> */}
+//       <button onClick={playVideo}>Play Video</button>
+//       {/* <video width='750' height='500' controls>
+//         <source src={video} type='video/mp4' />
+//       </video> */}
+//       {/* <QierPlayer
+//         width={740}
+//         height={420}
+//         language='zh'
+//         showVideoQuality={true}
+//         themeColor='#abc123'
+//         src480p={video}
+//         // src720p={video720p}
+//         // srcOrigin={video}
+//       /> */}
+//       <button onClick={playVideo(recordedChunks)}>Play</button>
+//       <video autoPlay playsInline muted src={video.src} type='video/mp4' />
+//     </div>
+//   );
+// }
+
+// export default Review;
+
+
+import React, { useEffect } from 'react';
+import DataApi from '../utils/DataApi';
+
+function Review() {
+  const { recordedChunks, images, setRecordedChunks, setImages } = React.useContext(DataApi);
+  useEffect(() => {
+    console.log('review', recordedChunks);
+    //To play the video
+    let vidSav = document.getElementById('vid2');
+    // let blob = new Blob(recordedChunks, { type: 'video/webm' });
+    // let videoURL = window.URL.createObjectURL(blob);
+    // vidSav.src = videoURL;
+    vidSav.src = recordedChunks;
+    return () => {};
+  }, []);
+  //   const handlePlay = React.useCallback(() => {
+  //     if (recordedChunks.length) {
+  //       const blob = new Blob(recordedChunks, {
+  //         type: 'video/webm',
+  //       });
+  //       const url = URL.createObjectURL(blob);
+  //       const a = document.createElement('a');
+  //       document.body.appendChild(a);
+  //       a.style = 'display: none';
+  //       a.href = url;
+  //       a.download = 'react-webcam-stream-capture.webm';
+  //       a.click();
+  //       window.URL.revokeObjectURL(url);
+  //       setRecordedChunks([]);
+  //       console.log('while dowload', recordedChunks);
+  //     }
+  //   }, [recordedChunks]);
+  console.log('review', recordedChunks);
+  return (
+    <div>
+      <h2>Review Page</h2>
+      {/* <video controls></video> */}
+      <video id='vid2' controls></video>
+      {/* <button onClick={handlePlay}>Play video</button> */}
+    </div>
+  );
+}
+
+export default Review;
+
+
+
+//Class Based
+import { render } from '@testing-library/react';
+import React, { Component } from 'react';
+import DataApi from '../utils/DataApi';
+
+class Review extends Component {
+  static contextType = DataApi;
+
+  constructor() {
+    super();
+    this.state = {
+      recordedChunks: [],
+    };
+  }
+
+  static getDerivedStateFromProps() {
+    // this.new = this.context.recordedChunks;
+    // this.setState({ recordedChunks: this.new });
+  }
+  componentDidMount() {
+    this.setState({ recordedChunks: this.context.recordedChunks });
+    console.log('review', this.state.recordedChunks);
+    //To play the video
+    let vidSav = document.getElementById('vid2');
+    // let blob = new Blob(recordedChunks, { type: 'video/webm' });
+    // let videoURL = window.URL.createObjectURL(blob);
+    // vidSav.src = videoURL;
+    vidSav.src = this.state.recordedChunks;
+  }
+
+  render() {
+    console.log('review', this.state.recordedChunks);
+    return (
+      <div>
+        <h2>Review Page</h2>
+        {/* <video controls></video> */}
+        <video id='vid2' controls></video>
+        {/* <button onClick={handlePlay}>Play video</button> */}
+      </div>
+    );
+  }
+}
+
+export default Review;

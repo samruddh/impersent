@@ -1,0 +1,6 @@
+
+REACT_APP_SSL_KEY_FILE=./generated-private-key.pem
+
+REACT_APP_PUBLIC_URL=true
+REACT_APP_CI=true
+REACT_APP_INLINE_RUNTIME_CHUNK=true

@@ -1,0 +1,128 @@
+import React, { useEffect } from 'react';
+import DataApi from '../utils/DataApi';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Vector1 from '../images/Vector1_rec.svg';
+import Vector3 from '../images/vector3_rec.svg';
+import Vector4 from '../images/Vector4.svg';
+import Vector5 from '../images/Vector5.svg';
+import Vector2 from '../images/Vector2.svg';
+import VectorPlay from '../images/Vector_play.svg';
+import { Player, ControlBar, BigPlayButton } from 'video-react';
+// import '~video-react/dist/video-react.css';
+
+import $ from 'jquery';
+import '../css/review.css';
+function Review() {
+  const { recordedChunks, images, setRecordedChunks, setImages } = React.useContext(DataApi);
+  useEffect(() => {
+    console.log('review', recordedChunks);
+    //To play the video
+    let vidSav = document.getElement('source');
+    // console.log(vidSav);
+    vidSav.src = recordedChunks;
+    console.log('use', vidSav.duration);
+    durationHandle();
+    return () => {};
+  }, [recordedChunks]);
+
+  const durationHandle = React.useCallback(() => {
+    console.log('durationHandler');
+    var video = document.querySelector('video');
+    var onDurationChange = function () {
+      if (video.readyState) {
+        //to your thing
+        var minutes = parseInt(video.duration / 60, 10);
+        var seconds = video.duration % 60;
+        seconds = Math.trunc(seconds);
+        // (Put the minutes and seconds in the display)
+        // const duration = document.getElementById('duration');
+        // duration.innerHTML = `${minutes} : ${seconds}`;
+      }
+    };
+
+    video.addEventListener('durationchange', onDurationChange);
+    onDurationChange();
+  }, []);
+
+  const playHandler = () => {
+    console.log('clicked');
+    let video = document.getElementById('vid2');
+    console.log(video.duration);
+
+    if (video.paused == true) {
+      console.log(video);
+      // var i = setInterval(function () {
+      //   console.log('duration run');
+      //   var minutes = parseInt(video.duration / 60, 10);
+      //   var seconds = video.duration % 60;
+      //   seconds = Math.trunc(seconds);
+      //   // (Put the minutes and seconds in the display)
+      //   const duration = document.getElementById('duration');
+      //   duration.innerHTML = `${minutes} : ${seconds}`;
+      //   clearInterval(i);
+      // }, 200);
+
+      // Play the video
+      video.play();
+    } else {
+      // Pause the video
+      console.log(video);
+
+      video.pause();
+    }
+  };
+  console.log('review', recordedChunks);
+  return (
+    <div className='review_page'>
+      <div className='top_content_photo'>
+        <Link to='/' className='redirect_title'>
+          <p className='impressent_top_file'>impressent</p>
+        </Link>
+      </div>
+      <div className='container'>
+        <div className='video_center'>
+          <p className='record_video'>Save Video</p>
+          <div className='vectors'>
+            <img className='vector' src={Vector1} alt='' />
+            <img className='vector' src={Vector4} alt='' />
+            <img className='vector' src={Vector2} alt='' />
+            <img className='vector' src={Vector5} alt='' />
+            <img className='vector' src={Vector3} alt='' />
+          </div>
+
+          <div className='container justify-content-center review_container'>
+            <div className='row justify-content-center'>
+              <div className='video_part col'>
+                <Player fluid={false} width={150} height={150}>
+                  <source id='vid2' src={recordedChunks} />
+                  <ControlBar className='d-none' />
+                  <BigPlayButton position='center'></BigPlayButton>
+                </Player>
+                {/* <video id='vid2' className='video_review'></video> */}
+                {/* <button
+                  id='play_btn'
+                  className='play_btn'
+                  id='playBtn'
+                  onClick={(e) => playHandler()}
+                >
+                  <img className='vector' src={VectorPlay} alt='' />
+                </button>
+                <p id='duration'></p> */}
+              </div>
+              <div className='content_part col'>
+                <div className='review_title'>Title</div>
+                <div className='review_description'>Description</div>
+                <div className='review_share'>Save & Share</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className='footer_record_div d-flex justify-content-center d-flex align-items-center footer_review'>
+        <footer className='footer_record'>© Copyright 2020</footer>
+      </div>
+    </div>
+  );
+}
+
+export default Review;

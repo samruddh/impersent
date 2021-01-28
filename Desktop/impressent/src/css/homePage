@@ -1,0 +1,258 @@
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  body,ul{
+    margin-top:-15px;
+    padding:0;
+  }
+  body{
+    margin:0;
+    padding:0;
+  }
+  .home_layout{
+    position: relative;
+    width: auto;
+    height: 100vh;
+    background: #202521
+    /* background-color:white; */
+  }
+  .frame_1{
+    position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 92.09%;
+  }
+  .title_top{
+    position: absolute;
+  width: 131px;
+  height: 13px;
+  left: 28px;
+  top: 14px;
+  
+  font-family: Gotham;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 80%;
+  
+  
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  
+  color: #FFFFFF;
+  }
+  
+  .group_40{
+    position: absolute;
+  width: 3.84px;
+  height: 17px;
+  
+  right: 32.58px;
+  top: 26px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 2.5px;
+  }
+  /* .rectangle9{
+    position: absolute;
+  left: 97.08%;
+  right: 2.65%;
+  top: 37.68%;
+  bottom: 56.76%;
+  
+  background: #FFFFFF;
+  }
+  .rectangle10{
+   
+  
+  
+  position: absolute;
+  left: 97.08%;
+  right: 2.65%;
+  top: 47.22%;
+  bottom: 49.22%;
+  
+  background: #FFFFFF;
+  }
+  
+  .rectangle11{
+  
+  
+  
+  position: absolute;
+  left: 97.08%;
+  right: 2.65%;
+  top: 56.76%;
+  bottom: 37.68%;
+  
+  background: #FFFFFF;
+  } */
+  .welcome{
+    /* Welcome to */
+  position: absolute;
+  left: 45.25%;
+  /* right: 45.62%; */
+  top: 31.94%;
+  bottom: 63.88%;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 80%;
+  /* or 19px */
+  
+  
+  color: #FFFFFF;
+  }
+  
+  .impressent{
+    /* impressent */
+  
+  
+  position: absolute;
+  left: 29.58%;
+  right: 29.65%;
+  top: 35.48%;
+  bottom: 52.84%;
+  
+  font-family: Gotham;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 71.6947px;
+  line-height: 80%;
+  /* or 57px */
+  
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  
+  color: #FE671F;
+  }
+  
+  .select_slides{
+    position: absolute;
+    left: 39.24%;
+    /* right: 39.24%; */
+    top: 61.63%;
+    bottom: 38.19%;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 80%;
+    /* or 19px */
+    
+    
+    color: #FFFFFF;
+  }
+  
+  .group_5{
+    /* Group 5 */
+  
+  
+  position: absolute;
+  left: 42.64%;
+  right: 42.57%;
+  top: 68.63%;
+  /* bottom: 27.29%; */
+  
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  .rectangle1{
+    position: absolute;
+    /* left: 19.64%; */
+   
+    top: 79.63%;
+    /* bottom: 27.29%; */
+    height:53px;
+  width:213px;
+    background: #FE671F;
+    border-radius: 26.5px;
+  }
+  .proceed{
+    /* PROCEED */
+    all:unset;
+  
+  text-transform: uppercase;
+  position: absolute;
+  left: 30.24%;
+  /* right: 47.15%; */
+  /* top: 95%; */
+  /* bottom: 29.47%; */
+  margin-top: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 80%;
+  /* or 14px */
+  
+  text-align: center;
+  
+  color: #FFFFFF;
+  }
+  .copyright{
+    /* © Copyright 2020 */
+  position: absolute;
+  left: 45.07%;
+  /* right: 45.14%; */
+  /* top: 92.2%; */
+  bottom: 34px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 80%;
+  /* or 14px */
+  color: #9AA087;
+  }
+
+  /* .link:hover,.link{
+      list-style: none;
+      text-decoration: none;
+      color: white;
+  } */

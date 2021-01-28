@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@font-face {
+  font-family: Gotham;
+  src: url(../fonts/GOTHAMMEDIUM.TTF);
+}
+.file_layout {
+  height: 80vh;
+}
+.impressent_top_file,
+.impressent_top_file_mob {
+  margin-left: 1.75rem;
+  color: white;
+}
+.impressent_top_file_mob {
+  text-transform: uppercase;
+  font-family: Gotham;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 80%;
+  letter-spacing: 0.17em;
+  /* margin-left: 0.8rem; */
+  padding-top: 0.4rem;
+}
+.group_40 {
+  right: 1.625rem;
+}
+.icon_body {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* align-items: center; */
+}
+.no_data_div {
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 50%; */
+  /* margin-top: 15rem;  */
+}
+.no_data {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 80%;
+  color: #9aa087;
+}
+.select_img_mob {
+  all: unset;
+  text-align: end;
+  margin-left: auto;
+  display: flex;
+  /* justify-content: end; */
+}
+.select_img_mob:active,
+.select_img_mob:focus {
+  outline: none;
+}
+.add_div {
+  display: flex;
+  padding: 35px 29px;
+  justify-content: flex-end;
+  margin-left: 1rem;
+  position: absolute;
+  bottom: 30px;
+  right: 5px;
+}
+.add_icon_div {
+  all: unset;
+  height: 63px;
+  width: 63px;
+  border-radius: 50%;
+  background: #fe671f;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* margin-left: 1.5rem; */
+}
+.add_icon {
+  color: white;
+}
+.show_click {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+  margin-bottom: 2.5rem;
+}
+.camera_div {
+  border-radius: 50%;
+  width: 63px;
+  height: 63px;
+  background: #fe671f;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: 1rem;
+}
+.camera_icon {
+  color: white;
+  text-align: center;
+  /* margin-left: 5px; */
+}
+.vector_icon {
+  border-radius: 50%;
+  width: 63px;
+  height: 63px;
+  background: #fe671f;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.vector_image {
+  color: white;
+  height: 20px;
+  width: 20px;
+}
+.camera {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.close_div {
+  align-self: flex-end;
+  border-radius: 50%;
+  width: 63px;
+  height: 63px;
+  background: #fe671f;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.close_icon {
+  color: white;
+}
+
+.camera p {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 80%;
+
+  color: #9aa087;
+}
+.select_btn {
+  all: unset;
+}
+.select_btn:active,
+.select_btn:focus {
+  /* border: 0; */
+  outline: none;
+}
+.add_icon_div:active,
+.add_icon_div:focus {
+  outline: none;
+}
+.camera .select_p {
+  margin-right: 1rem;
+}
+.close_div button {
+  all: unset;
+}
+.redirect_title:hover {
+  all: unset;
+  cursor: pointer;
+  color: white;
+}
+.mob_file {
+  position: absolute;
+  left: 33%;
+}

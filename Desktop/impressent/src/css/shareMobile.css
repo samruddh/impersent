@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+.shareContent {
+  color: white;
+  width: 500px;
+}
+.shareVideoPara {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 80%;
+  /* or 19px */
+
+  text-align: center;
+
+  color: #f7f6f3;
+}
+.shareInput {
+  font-family: 'Roboto', sans-serif;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 80%;
+  /* or 11px */
+
+  color: #9aa087;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: block;
+  background: #f7f6f3;
+  border: 1px solid #202521;
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 46px;
+  width: 301px;
+  text-align: center;
+}
+.shareInput:focus {
+  outline: none;
+}
+.shareIcons {
+}
+.shareShare {
+  all: unset;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 80%;
+
+  /* or 14px */
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 0.3rem;
+  height: 53px;
+  width: 213px;
+  background: #fe671f;
+  border-radius: 26.5px;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  color: white;
+}
+
+.shareShare:active,
+.shareShare:focus {
+  outline: none;
+}
+.shareVia {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 80%;
+  /* or 14px */
+
+  text-align: center;
+
+  color: #ffffff;
+  margin-top: 1.5rem;
+}
+.shareContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.video_mob {
+  height: 230px;
+  margin-top: 3rem;
+}
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .sharePage {
+    height: 80vh;
+  }
+  .share_container {
+    height: 80vh;
+  }
+
+  .wait_message {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .addMore {
+    all: unset;
+    background: none;
+  }
+  .addMore:focus,
+  .addMore:active {
+    outline: none;
+  }
+  .footer_share {
+    position: absolute;
+    bottom: 25px;
+    left: 33%;
+  }
+  .shareMobCenter {
+    width: 35vh;
+    height: 55vh;
+  }
+  /* .durationShare {
+    position: unset;
+    position: absolute;
+    left: 45%;
+  } */
+}
